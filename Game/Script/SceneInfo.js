@@ -5,13 +5,13 @@ class SceneInfo {
 
     static render(game) {
         Render.init(game.ctx)
-        Render.strokeRectUI(game.ctx, UI.Info.buttonBack)
-        Render.fillTextUI(game.ctx, 'Found', UI.Info.textTitle)
+        Render.strokeRectUI(game.ctx, UI.info.buttonBack)
+        Render.fillTextUI(game.ctx, 'Found', UI.info.textTitle)
     }
 
     static mouseUp(game, pos, button) {
         if (button === 0) {
-            if (pointInsideRectUI(pos, UI.Info.buttonBack)) {
+            if (pointInsideRectUI(pos, UI.info.buttonBack)) {
                 game.scene = 'title'
                 game.state = ''
             }

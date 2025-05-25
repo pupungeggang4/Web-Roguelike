@@ -28,9 +28,9 @@ class Game {
         } else if (this.scene === 'map') {
             SceneMap.loop(this)
         } else if (this.scene === 'battle') {
-
+            SceneBattle.loop(this)
         } else if (this.scene === 'info') {
-
+            SceneInfo.loop(this)
         }
 
         this.gameLoop = requestAnimationFrame(() => this.loop())
@@ -49,9 +49,9 @@ class Game {
         } else if (this.scene === 'map') {
             SceneMap.mouseUp(this, pos, button)
         } else if (this.scene === 'battle') {
-
+            SceneBattle.mouseUp(this, pos, button)
         } else if (this.scene === 'info') {
-
+            SceneInfo.mouseUp(this, pos, button)
         }
     }
 

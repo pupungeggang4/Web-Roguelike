@@ -5,13 +5,13 @@ class SceneMap {
 
     static render(game) {
         Render.init(game.ctx)
-        Render.strokeRectUI(game.ctx, UI.Map.buttonBack)
-        Render.fillTextUI(game.ctx, 'Select', UI.Map.textTitle)
+        Render.strokeRectUI(game.ctx, UI.map.buttonBack)
+        Render.fillTextUI(game.ctx, 'Select', UI.map.textTitle)
     }
 
     static mouseUp(game, pos, button) {
         if (button === 0) {
-            if (pointInsideRectUI(pos, UI.Map.buttonBack)) {
+            if (pointInsideRectUI(pos, UI.map.buttonBack)) {
                 game.scene = 'title'
                 game.state = ''
             }

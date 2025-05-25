@@ -11,12 +11,11 @@ const UI = {
     
     map: {
         textTitle: [24, 24],
-        buttonBack: [20, 1180, 80, 80],
-
+        buttonBack: [1180, 20, 80, 80],
     },
 
     info: {
         textTitle: [24, 24],
-        buttonBack: [20, 1180, 80, 80]
+        buttonBack: [1180, 20, 80, 80]
     }
 }
