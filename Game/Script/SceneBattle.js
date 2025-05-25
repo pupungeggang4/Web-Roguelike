@@ -1,0 +1,14 @@
+class SceneBattle {
+    static loop(game) {
+        this.render(game)
+    }
+
+    static render(game) {
+        Render.init(game.ctx)
+        Render.strokeRectUI(game.ctx, UI.battle.buttonMenu)
+    }
+
+    static mouseUp(game, pos, button) {
+
+    }
+}

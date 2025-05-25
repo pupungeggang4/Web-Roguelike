@@ -12,6 +12,19 @@ class Game {
         this.ctx = this.canvas.getContext('2d')
         this.canvas.addEventListener('mouseup', (event) => this.mouseUp(event), false)
 
+        this.adventure = {
+            floor: 1,
+            next: 1,
+            layout: [
+                [0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0]
+            ],
+        }
+        this.field = []
+
         this.frameCurremt = performance.now()
         this.framePrevious = performance.now()
         this.delta = 16
@@ -34,6 +47,24 @@ class Game {
         }
 
         this.gameLoop = requestAnimationFrame(() => this.loop())
+    }
+
+    adventureInit() {
+        this.adventure.floor = 1
+        this.adventure.next = 1
+        this.adventure.layout = [
+            [0, 2, 0, 0, 2, 0, 0, 0],
+            [0, 2, 0, 0, 2, 0, 0, 0],
+            [1, 2, 0, 0, 2, 0, 0, 5],
+            [0, 2, 0, 0, 2, 0, 0, 0],
+            [0, 2, 0, 0, 2, 0, 0, 0]
+        ]
+        for (let i = 0; i < 5; i++) {
+            this.adventure.layout[i][2] = Math.floor(Math.random() * 3) + 2
+            this.adventure.layout[i][3] = Math.floor(Math.random() * 3) + 2
+            this.adventure.layout[i][5] = Math.floor(Math.random() * 3) + 2
+            this.adventure.layout[i][6] = Math.floor(Math.random() * 3) + 2
+        }
     }
 
     mouseUp(event) {
