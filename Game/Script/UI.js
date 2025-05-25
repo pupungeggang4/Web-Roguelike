@@ -7,5 +7,16 @@ const UI = {
         textInfo: [184, 264],
         buttonErase: [160, 320, 960, 80],
         textErase: [184, 344]
+    },
+    
+    map: {
+        textTitle: [24, 24],
+        buttonBack: [20, 1180, 80, 80],
+
+    },
+
+    info: {
+        textTitle: [24, 24],
+        buttonBack: [20, 1180, 80, 80]
     }
 }

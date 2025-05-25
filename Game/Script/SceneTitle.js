@@ -19,6 +19,12 @@ class SceneTitle {
             if (pointInsideRectUI(pos, UI.title.buttonStart)) {
                 game.scene = 'map'
                 game.state = ''
+            } else if (pointInsideRectUI(pos, UI.title.buttonInfo)) {
+                game.scene = 'info'
+                game.state = ''
+                game.infoTab = ''
+            } else if (pointInsideRectUI(pos, UI.title.buttonErase)) {
+                game.saveData = game.eraseData()
             }
         }
     }

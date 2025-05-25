@@ -1,11 +1,12 @@
 class Game {
     constructor() {
         imageLoad()
-        this.save = this.saveInit()
+        this.saveData = this.saveInit()
 
         this.scene = 'title'
         this.state = ''
         this.stateClick = ''
+        this.infoTab = ''
 
         this.canvas = document.getElementById('screen')
         this.ctx = this.canvas.getContext('2d')
