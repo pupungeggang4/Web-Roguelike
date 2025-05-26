@@ -38,13 +38,13 @@ const UI = {
         fieldSize: [64, 64],
         expBar: [20, 680, 1240, 20],
         right: {
-            info: [],
-            hpIcon: [],
-            hpText: [],
-            hpBar: [],
-            energyIcon: [],
-            energyText: [],
-            energyBar: [],
+            info: [780, 120, 480, 80],
+            hpIcon: [780, 220],
+            hpText: [824, 224],
+            hpBar: [940, 220, 320, 40],
+            energyIcon: [780, 260],
+            energyText: [824, 264],
+            energyBar: [940, 260, 320, 40],
         }
     },
 

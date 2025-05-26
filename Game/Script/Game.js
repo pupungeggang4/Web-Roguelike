@@ -94,22 +94,22 @@ class Game {
 
     saveInit() {
         if (localStorage.getItem('pupungeggang4:WebRoguelike') === null) {
-            localStorage.setItem('pupungeggang4:WebRoguelike', JSON.parse(JSON.stringify(emptySave)))
+            localStorage.setItem('pupungeggang4:WebRoguelike', JSON.stringify(emptySave))
         }
 
-        return JSON.parse(JSON.stringify(localStorage.getItem('pupungeggang4:WebRoguelike')))
+        return JSON.parse(localStorage.getItem('pupungeggang4:WebRoguelike'))
     }
 
     saveData() {
-
+        localStorage.setItem('pupungeggang4:WebRoguelike', JSON.stringify(game.saveData))
     }
 
     loadData() {
-
+        return JSON.parse(localStorage.getItem('pupungeggang4:WebRoguelike'))
     }
 
     eraseData() {
-        localStorage.setItem('pupungeggang4:WebRoguelike', JSON.parse(JSON.stringify(emptySave)))
-        return JSON.parse(JSON.stringify(localStorage.getItem('pupungeggang4:WebRoguelike')))
+        localStorage.setItem('pupungeggang4:WebRoguelike', JSON.stringify(emptySave))
+        return JSON.parse(localStorage.getItem('pupungeggang4:WebRoguelike'))
     }
 }
