@@ -12,6 +12,7 @@ class SceneCharacterSelect {
             Render.strokeRectUI(game.ctx, UI.characterSelect.buttonCharacter[i])
         }
 
+        Render.strokeRectUI(game.ctx, UI.characterSelect.descriptionBox)
         Render.strokeRectUI(game.ctx, UI.characterSelect.buttonStart)
         Render.fillTextUI(game.ctx, `Start`, UI.characterSelect.textStart)
     }
