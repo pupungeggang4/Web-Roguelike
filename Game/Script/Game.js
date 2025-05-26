@@ -23,7 +23,8 @@ class Game {
                 [0, 0, 0, 0, 0, 0, 0, 0]
             ],
         }
-        this.field = []
+        this.battle = new Battle()
+        this.player = new Player()
 
         this.frameCurremt = performance.now()
         this.framePrevious = performance.now()

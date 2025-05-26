@@ -19,6 +19,11 @@ const UI = {
 
     battle: {
         buttonMenu: [1180, 20, 80, 80],
+        fieldStart: [20, 20],
+        fieldSize: [64, 64],
+        right: {
+
+        }
     },
 
     info: {
