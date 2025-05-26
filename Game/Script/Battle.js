@@ -15,5 +15,14 @@ class Field {
             }
             this.cell.push(temp)
         }
+
+        this.canvas = document.createElement('canvas')
+        this.canvas.width = 576
+        this.canvas.height = 576
+        this.ctx = this.canvas.getContext('2d')
+    }
+
+    render() {
+        
     }
 }

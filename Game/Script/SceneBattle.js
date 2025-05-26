@@ -6,6 +6,8 @@ class SceneBattle {
     static render(game) {
         Render.init(game.ctx)
         Render.strokeRectUI(game.ctx, UI.battle.buttonMenu)
+        Render.strokeRectUI(game.ctx, UI.battle.fieldRect)
+        Render.strokeRectUI(game.ctx, UI.battle.expBar)
     }
 
     static mouseUp(game, pos, button) {

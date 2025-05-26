@@ -39,6 +39,8 @@ class Game {
 
         if (this.scene === 'title') {
             SceneTitle.loop(this)
+        } else if (this.scene === 'characterselect') {
+            SceneCharacterSelect.loop(this)
         } else if (this.scene === 'map') {
             SceneMap.loop(this)
         } else if (this.scene === 'battle') {
@@ -78,6 +80,8 @@ class Game {
         
         if (this.scene === 'title') {
             SceneTitle.mouseUp(this, pos, button)
+        } else if (this.scene === 'characterselect') {
+            SceneCharacterSelect.mouseUp(this, pos, button)
         } else if (this.scene === 'map') {
             SceneMap.mouseUp(this, pos, button)
         } else if (this.scene === 'battle') {

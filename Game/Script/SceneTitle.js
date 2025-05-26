@@ -17,9 +17,8 @@ class SceneTitle {
     static mouseUp(game, pos, button) {
         if (button === 0) {
             if (pointInsideRectUI(pos, UI.title.buttonStart)) {
-                game.scene = 'map'
+                game.scene = 'characterselect'
                 game.state = ''
-                game.adventureInit()
             } else if (pointInsideRectUI(pos, UI.title.buttonInfo)) {
                 game.scene = 'info'
                 game.state = ''
