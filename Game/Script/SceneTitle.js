@@ -19,6 +19,7 @@ class SceneTitle {
             if (pointInsideRectUI(pos, UI.title.buttonStart)) {
                 game.scene = 'characterselect'
                 game.state = ''
+                game.selectedCharacter = -1
             } else if (pointInsideRectUI(pos, UI.title.buttonInfo)) {
                 game.scene = 'info'
                 game.state = ''

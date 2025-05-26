@@ -12,6 +12,7 @@ class Game {
         this.ctx = this.canvas.getContext('2d')
         this.canvas.addEventListener('mouseup', (event) => this.mouseUp(event), false)
 
+        this.selectedCharacter = -1
         this.adventure = {
             floor: 1,
             next: 1,

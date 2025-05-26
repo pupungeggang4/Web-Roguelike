@@ -7,9 +7,13 @@ class SceneCharacterSelect {
         Render.init(game.ctx)
         Render.strokeRectUI(game.ctx, UI.characterSelect.buttonBack)
 
+        Render.fillTextUI(game.ctx, 'Select Character', UI.characterSelect.textTitle)
         for (let i = 0; i < 6; i++) {
             Render.strokeRectUI(game.ctx, UI.characterSelect.buttonCharacter[i])
         }
+
+        Render.strokeRectUI(game.ctx, UI.characterSelect.buttonStart)
+        Render.fillTextUI(game.ctx, `Start`, UI.characterSelect.textStart)
     }
 
     static mouseUp(game, pos, button) {
@@ -21,6 +25,12 @@ class SceneCharacterSelect {
 
             for (let i = 0; i < 6; i++) {
                 if (pointInsideRectUI(pos, UI.characterSelect.buttonCharacter[i])) {
+                    game.selectedCharacter = i
+                }
+            }
+
+            if (pointInsideRectUI(pos, UI.characterSelect.buttonStart)) {
+                if (game.selectedCharacter != -1) {
                     game.scene = 'map'
                     game.state = ''
                     game.adventureInit()
