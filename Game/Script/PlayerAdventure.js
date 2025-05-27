@@ -21,5 +21,12 @@ class PlayerAdventure {
         this.hardness = data['hardness']
         this.hp = data['hp']
         this.energy = data['energy']
+
+        this.deck = []
+        for (let i = 0; i < data['start_deck'].length; i++) {
+            let card = new Card()
+            card.setData(data['start_deck'][i])
+            this.deck.push(card)
+        }
     }
 }
