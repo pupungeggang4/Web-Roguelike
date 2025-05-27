@@ -8,7 +8,7 @@ class SceneCharacterSelect {
         Render.strokeRectUI(game.ctx, UI.characterSelect.buttonBack)
 
         Render.fillTextUI(game.ctx, 'Select Character', UI.characterSelect.textTitle)
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 9; i++) {
             Render.strokeRectUI(game.ctx, UI.characterSelect.buttonCharacter[i])
             if (game.saveData['unlocked'][i] === false) {
                 Render.drawImageUI(game.ctx, img.locked, UI.characterSelect.buttonCharacter[i])

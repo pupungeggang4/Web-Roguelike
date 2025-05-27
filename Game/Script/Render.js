@@ -11,6 +11,15 @@ class Render {
         ctx.fillStyle = 'black'
     }
 
+    static renderPlayerInfo(ctx, player) {
+        ctx.fillStyle = 'white'
+        Render.fillRectUI(ctx, UI.map.info.rect)
+        Render.strokeRectUI(ctx, UI.map.info.rect)
+        ctx.fillStyle = 'black'
+
+        Render.strokeRectUI(ctx, UI.map.info.buttonClose)
+    }
+
     static renderBattleRight(ctx, player) {
         Render.strokeRectUI(ctx, UI.battle.right.info)
         Render.drawImageUI(ctx, img.icon.hp, UI.battle.right.hpIcon)

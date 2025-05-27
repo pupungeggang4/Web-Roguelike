@@ -6,6 +6,7 @@ class SceneMap {
     static render(game) {
         Render.init(game.ctx)
         Render.strokeRectUI(game.ctx, UI.map.buttonBack)
+        Render.strokeRectUI(game.ctx, UI.map.buttonInfo)
         Render.fillTextUI(game.ctx, 'Select', UI.map.textTitle)
 
         for (let i = 0; i < 5; i++) {
@@ -20,6 +21,10 @@ class SceneMap {
             }
         }
 
+        if (game.state === 'info') {
+            Render.renderPlayerInfo(game.ctx, game.player)
+        }
+
         game.ctx.fillStyle = 'black'
     }
 
@@ -32,6 +37,13 @@ class SceneMap {
 
             if (game.state === '') {
                 this.handleCellClick(game, pos)
+                if (pointInsideRectUI(pos, UI.map.buttonInfo)) {
+                    game.state = 'info'
+                }
+            } else if (game.state === 'info') {
+                if (pointInsideRectUI(pos, UI.map.buttonInfo) || pointInsideRectUI(pos, UI.map.info.buttonClose)) {
+                    game.state = ''
+                }
             }
         }
     }
