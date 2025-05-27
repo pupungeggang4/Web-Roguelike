@@ -11,6 +11,29 @@ class Render {
         ctx.fillStyle = 'black'
     }
 
+    static renderBattleRight(ctx, player) {
+        Render.strokeRectUI(ctx, UI.battle.right.info)
+        Render.drawImageUI(ctx, img.icon.hp, UI.battle.right.hpIcon)
+        Render.fillTextUI(ctx, '0/0', UI.battle.right.hpText)
+        Render.strokeRectUI(ctx, UI.battle.right.hpBar)
+        Render.drawImageUI(ctx, img.icon.energy, UI.battle.right.energyIcon)
+        Render.fillTextUI(ctx, '0/0', UI.battle.right.energyText)
+        Render.strokeRectUI(ctx, UI.battle.right.energyBar)
+
+        for (let i = 0; i < 3; i++) {
+            Render.strokeRectUI(ctx, UI.battle.right.item[i])
+        }
+        for (let i = 0; i < 9; i++) {
+            Render.strokeRectUI(ctx, UI.battle.right.equipment[i])
+        }
+
+        Render.strokeRectUI(ctx, UI.battle.right.baseAttack)
+        for (let i = 0; i < 10; i++) {
+            Render.strokeRectUI(ctx, UI.battle.right.card[i])
+        }
+        Render.strokeRectUI(ctx, UI.battle.right.cardBack)
+    }
+
     static strokeRectUI(ctx, rect) {
         ctx.strokeRect(rect[0], rect[1], rect[2], rect[3])
     }

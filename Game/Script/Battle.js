@@ -31,6 +31,6 @@ class Field {
         
             }
         }
-        ctx.drawImage(this.canvas, UI.battle.fieldRect[0], UI.battle.fieldRect[1])
+        ctx.drawImage(this.canvas, UI.battle.fieldStart[0], UI.battle.fieldStart[1])
     }
 }
