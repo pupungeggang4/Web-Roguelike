@@ -25,7 +25,7 @@ class Game {
             ],
         }
         this.battle = new Battle()
-        this.player = new Player()
+        this.player = new PlayerAdventure()
 
         this.frameCurremt = performance.now()
         this.framePrevious = performance.now()
@@ -69,6 +69,8 @@ class Game {
             this.adventure.layout[i][5] = Math.floor(Math.random() * 3) + 2
             this.adventure.layout[i][6] = Math.floor(Math.random() * 3) + 2
         }
+
+        game.player.adventureInit(game.selectedCharacter)
     }
 
     mouseUp(event) {

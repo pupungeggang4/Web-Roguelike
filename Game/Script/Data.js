@@ -19,3 +19,12 @@ const dataEquipment = {
 const dataUnit = {
 
 }
+
+const dataCharacter = {
+    0: {'element': 'fire', 'attack': 0, 'hardness': 0, 'hp': 60, 'energy': 7, 'start_deck': [1, 1, 1, 1, 2, 2, 2, 2]},
+    1: {'element': 'water', 'attack': 0, 'hardness': 0, 'hp': 70, 'energy': 6, 'start_deck': [1, 1, 1, 1, 2, 2, 2, 2]},
+    2: {'element': 'wind', 'attack': 0, 'hardness': 0, 'hp': 70, 'energy': 6, 'start_deck': [1, 1, 1, 1, 2, 2, 2, 2]},
+    3: {'element': 'earth', 'attack': 0, 'hardness': 1, 'hp': 60, 'energy': 6, 'start_deck': [1, 1, 1, 1, 2, 2, 2, 2]},
+    4: {'element': 'light', 'attack': 0, 'hardness': 0, 'hp': 70, 'energy': 6, 'start_deck': [1, 1, 1, 1, 2, 2, 2, 2]},
+    5: {'element': 'dark', 'attack': 1, 'hardness': 0, 'hp': 60, 'energy': 6, 'start_deck': [1, 1, 1, 1, 2, 2, 2, 2]},
+}

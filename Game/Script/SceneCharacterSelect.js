@@ -39,7 +39,7 @@ class SceneCharacterSelect {
                 if (game.selectedCharacter != -1) {
                     game.scene = 'map'
                     game.state = ''
-                    game.adventureInit()
+                    game.adventureInit(game)
                 }
             }
         }

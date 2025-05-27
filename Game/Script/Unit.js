@@ -15,9 +15,3 @@ class Unit extends Unitlike{
         super()
     }
 }
-
-class Player extends Unit {
-    constructor() {
-        super()
-    }
-}

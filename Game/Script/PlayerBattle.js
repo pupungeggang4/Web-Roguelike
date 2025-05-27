@@ -1,3 +1,3 @@
-class PlayerBattle {
+class PlayerBattle extends Unit {
 
 }
