@@ -7,6 +7,7 @@ class Game {
         this.state = ''
         this.stateClick = ''
         this.infoTab = ''
+        this.playerInfoTab = ''
 
         this.canvas = document.getElementById('screen')
         this.ctx = this.canvas.getContext('2d')
@@ -57,20 +58,18 @@ class Game {
         this.adventure.floor = 1
         this.adventure.next = 1
         this.adventure.layout = [
-            [0, 2, 0, 0, 2, 0, 0, 0],
-            [0, 2, 0, 0, 2, 0, 0, 0],
-            [1, 2, 0, 0, 2, 0, 0, 5],
-            [0, 2, 0, 0, 2, 0, 0, 0],
-            [0, 2, 0, 0, 2, 0, 0, 0]
+            [0, 2, 0, 2, 0, 2, 5, 0],
+            [0, 2, 0, 2, 0, 2, 5, 0],
+            [1, 2, 0, 2, 0, 2, 5, 6],
+            [0, 2, 0, 2, 0, 2, 5, 0],
+            [0, 2, 0, 2, 0, 2, 5, 0]
         ]
         for (let i = 0; i < 5; i++) {
-            this.adventure.layout[i][2] = Math.floor(Math.random() * 3) + 2
-            this.adventure.layout[i][3] = Math.floor(Math.random() * 3) + 2
-            this.adventure.layout[i][5] = Math.floor(Math.random() * 3) + 2
-            this.adventure.layout[i][6] = Math.floor(Math.random() * 3) + 2
+            this.adventure.layout[i][2] = Math.floor(Math.random() * 2) + 3
+            this.adventure.layout[i][4] = Math.floor(Math.random() * 2) + 3
         }
 
-        game.player.adventureInit(game.selectedCharacter)
+        this.player.adventureInit(this.selectedCharacter)
     }
 
     mouseUp(event) {

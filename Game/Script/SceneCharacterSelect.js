@@ -14,6 +14,10 @@ class SceneCharacterSelect {
                 Render.drawImageUI(game.ctx, img.locked, UI.characterSelect.buttonCharacter[i])
             }
         }
+        Render.drawImageUI(game.ctx, img.character[1], UI.characterSelect.buttonCharacter[0])
+        if (game.selectedCharacter != -1) {
+            Render.drawImageUI(game.ctx, img.selectFrame, UI.characterSelect.buttonCharacter[game.selectedCharacter])
+        }
 
         Render.strokeRectUI(game.ctx, UI.characterSelect.descriptionBox)
         Render.strokeRectUI(game.ctx, UI.characterSelect.buttonStart)

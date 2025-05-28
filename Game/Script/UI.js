@@ -35,6 +35,10 @@ const UI = {
         info: {
             rect: [160, 40, 960, 640],
             buttonClose: [1080, 40, 40, 40],
+            tabProfile: [160, 40, 160, 40],
+            tabDeck: [320, 40, 160, 40],
+            textName: [164, 84],
+            portrait: [200, 120, 160, 160],
         },
     },
 

@@ -13,7 +13,7 @@ class SceneMap {
             for (let j = 0; j < 8; j++) {
                 if (game.adventure.layout[i][j] > 0) {
                     let rect = [UI.map.elementStart[0] + UI.map.elementInterval[0] * j, UI.map.elementStart[1] + UI.map.elementInterval[1] * i, UI.map.elementSize[0], UI.map.elementSize[1]]
-                    let color = ['white', 'white', 'orange', 'blue', 'green', 'black']
+                    let color = ['white', 'white', 'orange', 'blue', 'green', 'yellow', 'black']
                     game.ctx.fillStyle = color[game.adventure.layout[i][j]]
                     Render.fillRectUI(game.ctx, rect)
                     Render.strokeRectUI(game.ctx, rect)
@@ -22,7 +22,7 @@ class SceneMap {
         }
 
         if (game.state === 'info') {
-            Render.renderPlayerInfo(game.ctx, game.player)
+            Render.renderPlayerInfo(game.ctx, game, game.player)
         }
 
         game.ctx.fillStyle = 'black'
@@ -39,6 +39,7 @@ class SceneMap {
                 this.handleCellClick(game, pos)
                 if (pointInsideRectUI(pos, UI.map.buttonInfo)) {
                     game.state = 'info'
+                    game.playerInfoTab = 'profile'
                 }
             } else if (game.state === 'info') {
                 if (pointInsideRectUI(pos, UI.map.buttonInfo) || pointInsideRectUI(pos, UI.map.info.buttonClose)) {

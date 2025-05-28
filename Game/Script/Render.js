@@ -11,11 +11,20 @@ class Render {
         ctx.fillStyle = 'black'
     }
 
-    static renderPlayerInfo(ctx, player) {
+    static renderPlayerInfo(ctx, game, player) {
         ctx.fillStyle = 'white'
         Render.fillRectUI(ctx, UI.map.info.rect)
         Render.strokeRectUI(ctx, UI.map.info.rect)
         ctx.fillStyle = 'black'
+        Render.strokeRectUI(ctx, UI.map.info.tabProfile)
+        Render.strokeRectUI(ctx, UI.map.info.tabDeck)
+
+        if (game.playerInfoTab === 'profile') {
+            Render.fillTextUI(ctx, 'Name', UI.map.info.textName)
+            Render.strokeRectUI(ctx, UI.map.info.portrait)
+        } else if (game.playerInfoTab === 'deck') {
+
+        }
 
         Render.strokeRectUI(ctx, UI.map.info.buttonClose)
     }
