@@ -13,9 +13,8 @@ class SceneMap {
             for (let j = 0; j < 8; j++) {
                 if (game.adventure.layout[i][j] > 0) {
                     let rect = [UI.map.elementStart[0] + UI.map.elementInterval[0] * j, UI.map.elementStart[1] + UI.map.elementInterval[1] * i, UI.map.elementSize[0], UI.map.elementSize[1]]
-                    let color = ['white', 'white', 'orange', 'blue', 'green', 'yellow', 'black']
-                    game.ctx.fillStyle = color[game.adventure.layout[i][j]]
-                    Render.fillRectUI(game.ctx, rect)
+                    let type = ['', 'start', 'battle', 'event', 'shop', 'rest', 'boss']
+                    Render.drawImageUI(game.ctx, img.icon[type[game.adventure.layout[i][j]]], rect)
                     Render.strokeRectUI(game.ctx, rect)
                 }
             }
