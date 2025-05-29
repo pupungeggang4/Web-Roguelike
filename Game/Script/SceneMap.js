@@ -43,6 +43,10 @@ class SceneMap {
             } else if (game.state === 'info') {
                 if (pointInsideRectUI(pos, UI.map.buttonInfo) || pointInsideRectUI(pos, UI.map.info.buttonClose)) {
                     game.state = ''
+                } else if (pointInsideRectUI(pos, UI.map.info.tabProfile)) {
+                    game.playerInfoTab = 'profile'
+                } else if (pointInsideRectUI(pos, UI.map.info.tabDeck)) {
+                    game.playerInfoTab = 'deck'
                 }
             }
         }

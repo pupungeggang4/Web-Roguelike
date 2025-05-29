@@ -10,7 +10,7 @@ class SceneCharacterSelect {
         Render.fillTextUI(game.ctx, 'Select Character', UI.characterSelect.textTitle)
         for (let i = 0; i < 9; i++) {
             Render.strokeRectUI(game.ctx, UI.characterSelect.buttonCharacter[i])
-            if (game.saveData['unlocked'][i] === false) {
+            if (game.saveData['unlocked'][i + 1] === false) {
                 Render.drawImageUI(game.ctx, img.locked, UI.characterSelect.buttonCharacter[i])
             }
         }
@@ -31,9 +31,9 @@ class SceneCharacterSelect {
                 game.state = ''
             }
 
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 9; i++) {
                 if (pointInsideRectUI(pos, UI.characterSelect.buttonCharacter[i])) {
-                    if (game.saveData['unlocked'][i] === true) {
+                    if (game.saveData['unlocked'][i + 1] === true) {
                         game.selectedCharacter = i
                     }
                 }

@@ -69,7 +69,7 @@ class Game {
             this.adventure.layout[i][4] = Math.floor(Math.random() * 2) + 3
         }
 
-        this.player.adventureInit(this.selectedCharacter)
+        this.player.adventureInit(this.selectedCharacter + 1)
     }
 
     mouseUp(event) {

@@ -22,6 +22,14 @@ class Render {
         if (game.playerInfoTab === 'profile') {
             Render.fillTextUI(ctx, 'Name', UI.map.info.textName)
             Render.strokeRectUI(ctx, UI.map.info.portrait)
+            Render.fillTextUI(ctx, `Lv.${player.level}`, UI.map.info.textLevel)
+            Render.fillTextUI(ctx, `Exp:${player.exp}/${player.expMax}`, UI.map.info.textExp)
+            Render.fillTextUI(ctx, `Gold:${player.gold}`, UI.map.info.textGold)
+
+            Render.fillTextUI(ctx, `Equipment`, UI.map.info.textEquipment)
+            for (let i = 0; i < 8; i++) {
+                Render.strokeRectUI(ctx, UI.map.info.equipment[i])
+            }
         } else if (game.playerInfoTab === 'deck') {
 
         }
@@ -41,7 +49,7 @@ class Render {
         for (let i = 0; i < 3; i++) {
             Render.strokeRectUI(ctx, UI.battle.right.item[i])
         }
-        for (let i = 0; i < 9; i++) {
+        for (let i = 0; i < 8; i++) {
             Render.strokeRectUI(ctx, UI.battle.right.equipment[i])
         }
 
