@@ -60,7 +60,7 @@ class SceneMap {
                     if (game.adventure.next === j) {
                         if (game.adventure.layout[i][j] === 2) {
                             game.scene = 'battle'
-                            game.state = 'start'
+                            game.state = ''
                         }
                     }
                 }

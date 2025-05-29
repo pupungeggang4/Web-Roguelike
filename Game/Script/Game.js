@@ -6,6 +6,7 @@ class Game {
         this.scene = 'title'
         this.state = ''
         this.stateClick = ''
+        this.menu = false
         this.infoTab = ''
         this.playerInfoTab = ''
 

@@ -30,6 +30,11 @@ class Render {
             for (let i = 0; i < 8; i++) {
                 Render.strokeRectUI(ctx, UI.map.info.equipment[i])
             }
+
+            Render.fillTextUI(ctx, `Item`, UI.map.info.textItem)
+            for (let i = 0; i < 3; i++) {
+                Render.strokeRectUI(ctx, UI.map.info.item[i])
+            }
         } else if (game.playerInfoTab === 'deck') {
 
         }
@@ -58,6 +63,19 @@ class Render {
             Render.strokeRectUI(ctx, UI.battle.right.card[i])
         }
         Render.strokeRectUI(ctx, UI.battle.right.cardBack)
+    }
+
+    static renderMenu(ctx) {
+        ctx.fillStyle = 'white'
+        Render.fillRectUI(ctx, UI.menu.rect)
+        Render.strokeRectUI(ctx, UI.menu.rect)
+        ctx.fillStyle = 'black'
+
+        Render.fillTextUI(ctx, 'Paused', UI.menu.textPaused)
+        Render.strokeRectUI(ctx, UI.menu.buttonResume)
+        Render.fillTextUI(ctx, 'Resume', UI.menu.textResume)
+        Render.strokeRectUI(ctx, UI.menu.buttonGiveUp)
+        Render.fillTextUI(ctx, 'Give Up', UI.menu.textGiveUp)
     }
 
     static strokeRectUI(ctx, rect) {
