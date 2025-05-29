@@ -12,6 +12,8 @@ class SceneTitle {
         Render.fillTextUI(game.ctx, 'Info', UI.title.textInfo)
         Render.strokeRectUI(game.ctx, UI.title.buttonErase)
         Render.fillTextUI(game.ctx, 'Erase Data', UI.title.textErase)
+        Render.strokeRectUI(game.ctx, UI.title.buttonExit)
+        Render.fillTextUI(game.ctx, 'Exit', UI.title.textExit)
     }
 
     static mouseUp(game, pos, button) {
@@ -26,6 +28,8 @@ class SceneTitle {
                 game.infoTab = ''
             } else if (pointInsideRectUI(pos, UI.title.buttonErase)) {
                 game.saveData = game.eraseData()
+            } else if (pointInsideRectUI(pos, UI.title.buttonExit)) {
+                window.close()
             }
         }
     }

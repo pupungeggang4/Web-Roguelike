@@ -6,7 +6,9 @@ const UI = {
         buttonInfo: [160, 240, 960, 80],
         textInfo: [184, 264],
         buttonErase: [160, 320, 960, 80],
-        textErase: [184, 344]
+        textErase: [184, 344],
+        buttonExit: [160, 400, 960, 80],
+        textExit: [184, 424]
     },
 
     characterSelect: {
