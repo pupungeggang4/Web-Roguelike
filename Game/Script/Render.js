@@ -36,7 +36,10 @@ class Render {
                 Render.strokeRectUI(ctx, UI.map.info.item[i])
             }
         } else if (game.playerInfoTab === 'deck') {
-
+            Render.fillTextUI(ctx, `Card`, UI.map.info.textCard)
+            for (let i = 0; i < 10; i++) {
+                Render.strokeRectUI(ctx, UI.map.info.card[i])
+            }
         }
 
         Render.strokeRectUI(ctx, UI.map.info.buttonClose)
