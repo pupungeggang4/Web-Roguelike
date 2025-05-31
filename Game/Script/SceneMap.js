@@ -5,9 +5,9 @@ class SceneMap {
 
     static render(game) {
         Render.init(game.ctx)
-        Render.strokeRectUI(game.ctx, UI.map.buttonBack)
-        Render.strokeRectUI(game.ctx, UI.map.buttonInfo)
-        Render.fillTextUI(game.ctx, 'Select', UI.map.textTitle)
+        Render.drawImageUI(game.ctx, img.button.menu, UI.map.buttonMenu)
+        Render.drawImageUI(game.ctx, img.button.info, UI.map.buttonInfo)
+        Render.fillTextUI(game.ctx, `Floor:${game.adventure.floor}`, UI.map.textTitle)
 
         for (let i = 0; i < 5; i++) {
             for (let j = 0; j < 8; j++) {
@@ -24,30 +24,44 @@ class SceneMap {
             Render.renderPlayerInfo(game.ctx, game, game.player)
         }
 
+        if (game.menu === true) {
+            Render.renderMenu(game.ctx)
+        }
+
         game.ctx.fillStyle = 'black'
     }
 
     static mouseUp(game, pos, button) {
-        if (button === 0) {
-            if (pointInsideRectUI(pos, UI.map.buttonBack)) {
+        if (game.menu === false) {
+            if (button === 0) {
+                if (pointInsideRectUI(pos, UI.map.buttonMenu)) {
+                    game.menu = true
+                }
+
+                if (game.state === '') {
+                    this.handleCellClick(game, pos)
+                    if (pointInsideRectUI(pos, UI.map.buttonInfo)) {
+                        game.state = 'info'
+                        game.playerInfoTab = 'profile'
+                        game.playerDeckPage = 0
+                    }
+                } else if (game.state === 'info') {
+                    if (pointInsideRectUI(pos, UI.map.buttonInfo) || pointInsideRectUI(pos, UI.map.info.buttonClose)) {
+                        game.state = ''
+                    } else if (pointInsideRectUI(pos, UI.map.info.tabProfile)) {
+                        game.playerInfoTab = 'profile'
+                    } else if (pointInsideRectUI(pos, UI.map.info.tabDeck)) {
+                        game.playerInfoTab = 'deck'
+                    }
+                }
+            }
+        } else if (game.menu === true) {
+            if (pointInsideRectUI(pos, UI.menu.buttonResume)) {
+                game.menu = false
+            } else if (pointInsideRectUI(pos, UI.menu.buttonGiveUp)) {
+                game.menu = false
                 game.scene = 'title'
                 game.state = ''
-            }
-
-            if (game.state === '') {
-                this.handleCellClick(game, pos)
-                if (pointInsideRectUI(pos, UI.map.buttonInfo)) {
-                    game.state = 'info'
-                    game.playerInfoTab = 'profile'
-                }
-            } else if (game.state === 'info') {
-                if (pointInsideRectUI(pos, UI.map.buttonInfo) || pointInsideRectUI(pos, UI.map.info.buttonClose)) {
-                    game.state = ''
-                } else if (pointInsideRectUI(pos, UI.map.info.tabProfile)) {
-                    game.playerInfoTab = 'profile'
-                } else if (pointInsideRectUI(pos, UI.map.info.tabDeck)) {
-                    game.playerInfoTab = 'deck'
-                }
             }
         }
     }

@@ -9,6 +9,7 @@ class Game {
         this.menu = false
         this.infoTab = ''
         this.playerInfoTab = ''
+        this.playerDeckPage = 0
 
         this.canvas = document.getElementById('screen')
         this.ctx = this.canvas.getContext('2d')

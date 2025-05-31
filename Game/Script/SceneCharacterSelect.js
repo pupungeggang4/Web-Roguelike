@@ -5,7 +5,7 @@ class SceneCharacterSelect {
 
     static render(game) {
         Render.init(game.ctx)
-        Render.strokeRectUI(game.ctx, UI.characterSelect.buttonBack)
+        Render.drawImageUI(game.ctx, img.button.back, UI.characterSelect.buttonBack)
 
         Render.fillTextUI(game.ctx, 'Select Character', UI.characterSelect.textTitle)
         for (let i = 0; i < 9; i++) {
@@ -20,6 +20,14 @@ class SceneCharacterSelect {
         }
 
         Render.strokeRectUI(game.ctx, UI.characterSelect.descriptionBox)
+
+        if (game.selectedCharacter != -1) {
+            Render.fillTextUI(game.ctx, `${dataCharacterD[game.selectedCharacter + 1]['name']}`, UI.characterSelect.textName)
+            Render.fillTextUI(game.ctx, `HP:${dataCharacter[game.selectedCharacter + 1]['hp']}`, UI.characterSelect.textHP)
+            Render.fillTextUI(game.ctx, `Energy:${dataCharacter[game.selectedCharacter + 1]['energy']}`, UI.characterSelect.textEnergy)
+            Render.fillTextUI(game.ctx, `Attack:${dataCharacter[game.selectedCharacter + 1]['attack']}`, UI.characterSelect.textAttack)
+            Render.fillTextUI(game.ctx, `Hardness:${dataCharacter[game.selectedCharacter + 1]['hardness']}`, UI.characterSelect.textHardness)
+        }
         Render.strokeRectUI(game.ctx, UI.characterSelect.buttonStart)
         Render.fillTextUI(game.ctx, `Start`, UI.characterSelect.textStart)
     }

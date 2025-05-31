@@ -11,6 +11,13 @@ let img = {
         rest: new Image(),
         boss: new Image(),
     },
+    button: {
+        prev: new Image(),
+        next: new Image(),
+        menu: new Image(),
+        back: new Image(),
+        info: new Image()
+    },
     character: {
         1: new Image(),
     }
@@ -32,6 +39,12 @@ function imageLoad() {
     img.icon.shop.src = 'Image/IconShop.png'
     img.icon.rest.src = 'Image/IconRest.png'
     img.icon.boss.src = 'Image/IconBoss.png'
+
+    img.button.prev.src = 'Image/ButtonPrev.png'
+    img.button.next.src = 'Image/ButtonNext.png'
+    img.button.menu.src = 'Image/ButtonMenu.png'
+    img.button.back.src = 'Image/ButtonBack.png'
+    img.button.info.src = 'Image/ButtonInfo.png'
 
     img.character[1].src = 'Image/Character1.png'
 }

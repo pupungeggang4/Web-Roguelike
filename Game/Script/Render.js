@@ -32,13 +32,18 @@ class Render {
             }
 
             Render.fillTextUI(ctx, `Item`, UI.map.info.textItem)
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 4; i++) {
                 Render.strokeRectUI(ctx, UI.map.info.item[i])
             }
         } else if (game.playerInfoTab === 'deck') {
             Render.fillTextUI(ctx, `Card`, UI.map.info.textCard)
-            for (let i = 0; i < 10; i++) {
+            Render.drawImageUI(ctx, img.button.prev, UI.map.info.buttonPrev)
+            Render.drawImageUI(ctx, img.button.next, UI.map.info.buttonNext)
+            for (let i = 0; i < 8; i++) {
                 Render.strokeRectUI(ctx, UI.map.info.card[i])
+                if (i < player.deck.length) {
+                    player.deck[i].render(ctx, UI.map.info.card[i])
+                }
             }
         }
 
@@ -54,7 +59,7 @@ class Render {
         Render.fillTextUI(ctx, '0/0', UI.battle.right.energyText)
         Render.strokeRectUI(ctx, UI.battle.right.energyBar)
 
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 4; i++) {
             Render.strokeRectUI(ctx, UI.battle.right.item[i])
         }
         for (let i = 0; i < 8; i++) {
