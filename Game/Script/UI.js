@@ -44,8 +44,11 @@ const UI = {
         info: {
             rect: [160, 40, 960, 640],
             buttonClose: [1080, 40, 40, 40],
-            tabProfile: [160, 40, 240, 40],
-            tabDeck: [400, 40, 240, 40],
+            tabProfile: [160, 40, 200, 40],
+            iconProfile: [240, 40],
+            tabDeck: [360, 40, 200, 40],
+            iconDeck: [440, 40],
+
             textName: [164, 84],
             portrait: [200, 120, 160, 160],
             textLevel: [164, 284],
@@ -103,7 +106,15 @@ const UI = {
 
     info: {
         textTitle: [24, 24],
-        buttonBack: [1180, 20, 80, 80]
+        buttonBack: [1180, 20, 80, 80],
+        tabCard: [40, 80, 200, 40],
+        iconCard: [120, 80],
+        tabEquipment: [240, 80, 200, 40],
+        iconEquipment: [320, 80],
+        tabWeapon: [440, 80, 200, 40],
+        iconWeapon: [520, 80],
+        tabItem: [640, 80, 200, 40],
+        iconItem: [720, 80, 120, 40]
     },
 
     card: {

@@ -10,6 +10,12 @@ let img = {
         shop: new Image(),
         rest: new Image(),
         boss: new Image(),
+
+        profile: new Image(),
+        card: new Image(),
+        equipment: new Image(),
+        weapon: new Image(),
+        item: new Image(),
     },
     button: {
         prev: new Image(),
@@ -33,12 +39,17 @@ function imageLoad() {
     img.icon.hp.src = 'Image/IconHP.png'
     img.icon.energy.src = 'Image/IconEnergy.png'
 
+    img.icon.profile.src = 'Image/IconProfile.png'
     img.icon.start.src = 'Image/IconStart.png'
     img.icon.battle.src = 'Image/IconBattle.png'
     img.icon.event.src = 'Image/IconEvent.png'
     img.icon.shop.src = 'Image/IconShop.png'
     img.icon.rest.src = 'Image/IconRest.png'
     img.icon.boss.src = 'Image/IconBoss.png'
+    img.icon.card.src = 'Image/IconCard.png'
+    img.icon.equipment.src = 'Image/IconEquipment.png'
+    img.icon.weapon.src = 'Image/IconWeapon.png'
+    img.icon.item.src = 'Image/IconItem.png'
 
     img.button.prev.src = 'Image/ButtonPrev.png'
     img.button.next.src = 'Image/ButtonNext.png'

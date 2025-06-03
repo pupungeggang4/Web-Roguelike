@@ -17,7 +17,9 @@ class Render {
         Render.strokeRectUI(ctx, UI.map.info.rect)
         ctx.fillStyle = 'black'
         Render.strokeRectUI(ctx, UI.map.info.tabProfile)
+        Render.drawImageUI(ctx, img.icon.profile, UI.map.info.iconProfile)
         Render.strokeRectUI(ctx, UI.map.info.tabDeck)
+        Render.drawImageUI(ctx, img.icon.card, UI.map.info.iconDeck)
 
         if (game.playerInfoTab === 'profile') {
             Render.fillTextUI(ctx, 'Name', UI.map.info.textName)
