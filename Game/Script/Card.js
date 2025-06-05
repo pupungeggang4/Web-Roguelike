@@ -43,13 +43,22 @@ class Card {
     render(ctx, pos) {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
         this.ctx.strokeRect(1, 1, 198, 238)
+
+        Render.strokeRectUI(this.ctx, UI.card.image)
+        this.ctx.fillStyle = 'white'
+        Render.fillRectUI(this.ctx, UI.card.energyRect)
+        this.ctx.fillStyle = 'black'
         Render.strokeRectUI(this.ctx, UI.card.energyRect)
+
         this.ctx.font = '32px neodgm'
         Render.fillTextUI(this.ctx, this.energy, UI.card.textEnergy)
-        Render.strokeRectUI(this.ctx, UI.card.image)
         this.ctx.font = '20px neodgm'
         Render.fillTextUI(this.ctx, this.name, UI.card.textName)
-        Render.fillTextUI(this.ctx, this.description, UI.card.textStart)
+
+        for (let i = 0; i < this.description.length; i++) {
+            let pos = [UI.card.textStart[0], UI.card.textStart[1] + UI.card.textInterval[1] * i]
+            Render.fillTextUI(this.ctx, this.description, pos)
+        }
 
         ctx.drawImage(this.canvas, pos[0], pos[1])
     }

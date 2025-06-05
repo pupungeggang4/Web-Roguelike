@@ -16,6 +16,9 @@ class SceneMap {
                     let type = ['', 'start', 'battle', 'event', 'shop', 'rest', 'boss']
                     Render.drawImageUI(game.ctx, img.icon[type[game.adventure.layout[i][j]]], rect)
                     Render.strokeRectUI(game.ctx, rect)
+                    if (game.adventure.next === j) {
+                        Render.drawImageUI(game.ctx, img.selectFrame80, rect)
+                    }
                 }
             }
         }

@@ -4,8 +4,8 @@ const dataCard = {
 }
 
 const dataCardD = {
-    1: {'ID': 1, 'name': 'attack', 'description': 'Deal 5 Damage.'},
-    2: {'ID': 2, 'name': 'guard', 'description': 'Gain 4 Armor.'}
+    1: {'ID': 1, 'name': 'attack', 'description': ['Deal 5 Damage.']},
+    2: {'ID': 2, 'name': 'guard', 'description': ['Gain 4 Armor.']}
 }
 
 const dataItem = {

@@ -42,8 +42,9 @@ class Render {
             Render.drawImageUI(ctx, img.button.prev, UI.map.info.buttonPrev)
             Render.drawImageUI(ctx, img.button.next, UI.map.info.buttonNext)
             for (let i = 0; i < 8; i++) {
+                let index = game.playerDeckPage * 8 + i
                 Render.strokeRectUI(ctx, UI.map.info.card[i])
-                if (i < player.deck.length) {
+                if (index < player.deck.length) {
                     player.deck[i].render(ctx, UI.map.info.card[i])
                 }
             }
