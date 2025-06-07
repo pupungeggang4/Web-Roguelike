@@ -10,6 +10,9 @@ class PlayerAdventure {
         this.attack = 0
         this.hardness = 0
         this.deck = []
+        this.equipment = []
+        this.weapon = []
+        this.item = []
     }
 
     adventureInit(ID) {
@@ -28,5 +31,9 @@ class PlayerAdventure {
             card.setData(data['start_deck'][i])
             this.deck.push(card)
         }
+
+        this.equipment = []
+        this.weapon = []
+        this.item = []
     }
 }

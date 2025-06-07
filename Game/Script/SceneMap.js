@@ -56,6 +56,10 @@ class SceneMap {
                     } else if (pointInsideRectUI(pos, UI.map.info.tabDeck)) {
                         game.playerInfoTab = 'deck'
                     }
+
+                    if (game.playerInfoTab === 'deck') {
+                        this.handleInfoDeckClick(game, game.player, pos)
+                    }
                 }
             }
         } else if (game.menu === true) {
@@ -81,6 +85,21 @@ class SceneMap {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    static handleInfoDeckClick(game, player, pos) {
+        let maxPage = Math.ceil(game.player.deck.length / 8) - 1
+        if (pointInsideRectUI(pos, UI.map.info.buttonNext)) {
+            if (game.playerDeckPage < maxPage) {
+                game.playerDeckPage += 1
+            }
+        }
+
+        if (pointInsideRectUI(pos, UI.map.info.buttonPrev)) {
+            if (game.playerDeckPage > 0) {
+                game.playerDeckPage -= 1
             }
         }
     }

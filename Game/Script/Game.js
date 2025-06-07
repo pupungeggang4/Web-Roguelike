@@ -30,6 +30,13 @@ class Game {
         this.battle = new Battle()
         this.player = new PlayerAdventure()
 
+        this.cardList = {}
+        for (let i = 1; i <= 2; i++) {
+            let card = new Card()
+            card.setData(i)
+            this.cardList[i] = card
+        }
+
         this.frameCurremt = performance.now()
         this.framePrevious = performance.now()
         this.delta = 16

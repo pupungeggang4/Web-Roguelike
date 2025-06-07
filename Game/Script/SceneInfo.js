@@ -5,8 +5,8 @@ class SceneInfo {
 
     static render(game) {
         Render.init(game.ctx)
-        Render.strokeRectUI(game.ctx, UI.info.buttonBack)
-        Render.fillTextUI(game.ctx, 'Found', UI.info.textTitle)
+        Render.drawImageUI(game.ctx, img.button.back, UI.info.buttonBack)
+        Render.fillTextUI(game.ctx, 'You Found...', UI.info.textTitle)
 
         Render.strokeRectUI(game.ctx, UI.info.tabCard)
         Render.drawImageUI(game.ctx, img.icon.card, UI.info.iconCard)
@@ -16,6 +16,8 @@ class SceneInfo {
         Render.drawImageUI(game.ctx, img.icon.weapon, UI.info.iconWeapon)
         Render.strokeRectUI(game.ctx, UI.info.tabItem)
         Render.drawImageUI(game.ctx, img.icon.item, UI.info.iconItem)
+
+        Render.renderInfo(game, game.ctx)
     }
 
     static mouseUp(game, pos, button) {

@@ -25,7 +25,7 @@ class SceneTitle {
             } else if (pointInsideRectUI(pos, UI.title.buttonInfo)) {
                 game.scene = 'info'
                 game.state = ''
-                game.infoTab = ''
+                game.infoTab = 'card'
             } else if (pointInsideRectUI(pos, UI.title.buttonErase)) {
                 game.saveData = game.eraseData()
             } else if (pointInsideRectUI(pos, UI.title.buttonExit)) {

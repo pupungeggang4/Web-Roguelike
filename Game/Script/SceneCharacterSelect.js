@@ -52,6 +52,7 @@ class SceneCharacterSelect {
                     game.scene = 'map'
                     game.state = ''
                     game.adventureInit(game)
+                    game.player.adventureInit(game.selectedCharacter + 1)
                 }
             }
         }

@@ -53,6 +53,11 @@ const UI = {
             portrait: [200, 120, 160, 160],
             textLevel: [164, 284],
             textExp: [164, 324],
+            textHP: [164, 524],
+            textEnergy: [164, 564],
+            textAttack: [164, 604],
+            textHardness: [164, 644],
+
             textGold: [164, 364],
             textEquipment: [404, 84],
             equipment: [
@@ -107,14 +112,21 @@ const UI = {
     info: {
         textTitle: [24, 24],
         buttonBack: [1180, 20, 80, 80],
-        tabCard: [40, 80, 200, 40],
-        iconCard: [120, 80],
-        tabEquipment: [240, 80, 200, 40],
-        iconEquipment: [320, 80],
-        tabWeapon: [440, 80, 200, 40],
-        iconWeapon: [520, 80],
-        tabItem: [640, 80, 200, 40],
-        iconItem: [720, 80, 120, 40]
+        tabCard: [140, 80, 200, 40],
+        iconCard: [220, 80],
+        tabEquipment: [340, 80, 200, 40],
+        iconEquipment: [420, 80],
+        tabWeapon: [540, 80, 200, 40],
+        iconWeapon: [620, 80],
+        tabItem: [740, 80, 200, 40],
+        iconItem: [820, 80, 120, 40],
+
+        buttonPrev: [60, 380, 40, 40],
+        buttonNext: [1180, 380, 40, 40],
+        card: [
+            [140, 160, 200, 240], [340, 160, 200, 240], [540, 160, 200, 240], [740, 160, 200, 240], [940, 160, 200, 240],
+            [140, 400, 200, 240], [340, 400, 200, 240], [540, 400, 200, 240], [740, 400, 200, 240], [940, 400, 200, 240],
+        ]
     },
 
     card: {

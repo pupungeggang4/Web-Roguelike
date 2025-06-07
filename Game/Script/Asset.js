@@ -24,10 +24,15 @@ let img = {
         next: new Image(),
         menu: new Image(),
         back: new Image(),
-        info: new Image()
+        info: new Image(),
+        close: new Image(),
     },
     character: {
         1: new Image(),
+    },
+    card: {
+        1: new Image(),
+        2: new Image(),
     }
 }
 
@@ -59,6 +64,10 @@ function imageLoad() {
     img.button.menu.src = 'Image/Button/ButtonMenu.png'
     img.button.back.src = 'Image/Button/ButtonBack.png'
     img.button.info.src = 'Image/Button/ButtonInfo.png'
+    img.button.close.src = 'Image/Button/ButtonClose.png'
 
     img.character[1].src = 'Image/Character1.png'
+
+    img.card[1].src = 'Image/Card/Card001.png'
+    img.card[2].src = 'Image/Card/Card002.png'
 }

@@ -25,8 +25,12 @@ class Render {
             Render.fillTextUI(ctx, 'Name', UI.map.info.textName)
             Render.strokeRectUI(ctx, UI.map.info.portrait)
             Render.fillTextUI(ctx, `Lv.${player.level}`, UI.map.info.textLevel)
-            Render.fillTextUI(ctx, `Exp:${player.exp}/${player.expMax}`, UI.map.info.textExp)
-            Render.fillTextUI(ctx, `Gold:${player.gold}`, UI.map.info.textGold)
+            Render.fillTextUI(ctx, `Exp: ${player.exp}/${player.expMax}`, UI.map.info.textExp)
+            Render.fillTextUI(ctx, `Gold: ${player.gold}`, UI.map.info.textGold)
+            Render.fillTextUI(ctx, `HP: ${player.hp}`, UI.map.info.textHP)
+            Render.fillTextUI(ctx, `Energy: ${player.energy}`, UI.map.info.textEnergy)
+            Render.fillTextUI(ctx, `Attack: ${player.attack}`, UI.map.info.textAttack)
+            Render.fillTextUI(ctx, `Hardness: ${player.hardness}`, UI.map.info.textHardness)
 
             Render.fillTextUI(ctx, `Equipment`, UI.map.info.textEquipment)
             for (let i = 0; i < 8; i++) {
@@ -50,7 +54,7 @@ class Render {
             }
         }
 
-        Render.strokeRectUI(ctx, UI.map.info.buttonClose)
+        Render.drawImageUI(ctx, img.button.close, UI.map.info.buttonClose)
     }
 
     static renderBattleRight(ctx, player) {
@@ -87,6 +91,26 @@ class Render {
         Render.fillTextUI(ctx, 'Resume', UI.menu.textResume)
         Render.strokeRectUI(ctx, UI.menu.buttonGiveUp)
         Render.fillTextUI(ctx, 'Give Up', UI.menu.textGiveUp)
+    }
+
+    static renderInfo(game, ctx) {
+        Render.drawImageUI(ctx, img.button.prev, UI.info.buttonPrev)
+        Render.drawImageUI(ctx, img.button.next, UI.info.buttonNext)
+
+        if (game.infoTab === 'card') {
+            for (let i = 0; i < 10; i++) {
+                Render.strokeRectUI(ctx, UI.info.card[i])
+            }
+            game.cardList[1].render(game.ctx, UI.info.card[0])
+            game.cardList[2].render(game.ctx, UI.info.card[1])
+
+        } else if (game.infoTab === 'weapon') {
+
+        } else if (game.infoTab === 'equipment') {
+            
+        } else if (game.infoTab === 'item') {
+
+        }
     }
 
     static strokeRectUI(ctx, rect) {
