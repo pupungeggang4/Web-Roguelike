@@ -5,7 +5,7 @@ class Card {
         this.rarity = ''
         this.name = ''
         this.energy = 0
-        this.action = []
+        this.effect = []
         this.description = ''
 
         this.canvas = document.createElement('canvas')
@@ -24,7 +24,7 @@ class Card {
         this.rarity = data['rarity']
         this.name = data['name']
         this.energy = data['energy']
-        this.action = data['action']
+        this.effect = data['effect']
         this.description = dataD['description']
     }
 
@@ -44,7 +44,9 @@ class Card {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
         this.ctx.strokeRect(1, 1, 198, 238)
 
-        Render.drawImageUI(this.ctx, img.card[this.ID], UI.card.image)
+        if (img.card[this.ID]) {
+            Render.drawImageUI(this.ctx, img.card[this.ID], UI.card.image)
+        }
         Render.strokeRectUI(this.ctx, UI.card.image)
         this.ctx.fillStyle = 'white'
         Render.fillRectUI(this.ctx, UI.card.energyRect)

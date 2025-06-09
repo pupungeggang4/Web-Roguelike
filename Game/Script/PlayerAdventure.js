@@ -11,7 +11,7 @@ class PlayerAdventure {
         this.hardness = 0
         this.deck = []
         this.equipment = []
-        this.weapon = []
+        this.weapon = null
         this.item = []
     }
 
@@ -33,7 +33,14 @@ class PlayerAdventure {
         }
 
         this.equipment = []
+        let tempEquipment = new Equipment()
+        tempEquipment.setData(data['equipment'])
+        this.equipment.push(tempEquipment)
+
         this.weapon = []
+        let tempWeapon = new Weapon()
+        tempWeapon.setData(data['weapon'])
+        this.weapon = tempWeapon
         this.item = []
     }
 }

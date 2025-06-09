@@ -32,6 +32,10 @@ class Render {
             Render.fillTextUI(ctx, `Attack: ${player.attack}`, UI.map.info.textAttack)
             Render.fillTextUI(ctx, `Hardness: ${player.hardness}`, UI.map.info.textHardness)
 
+            Render.fillTextUI(ctx, `Weapon`, UI.map.info.textWeapon)
+            Render.strokeRectUI(ctx, UI.map.info.weapon)
+            Render.strokeRectUI(ctx, UI.map.info.descriptionRect)
+
             Render.fillTextUI(ctx, `Equipment`, UI.map.info.textEquipment)
             for (let i = 0; i < 8; i++) {
                 Render.strokeRectUI(ctx, UI.map.info.equipment[i])
@@ -49,7 +53,7 @@ class Render {
                 let index = game.playerDeckPage * 8 + i
                 Render.strokeRectUI(ctx, UI.map.info.card[i])
                 if (index < player.deck.length) {
-                    player.deck[i].render(ctx, UI.map.info.card[i])
+                    player.deck[index].render(ctx, UI.map.info.card[i])
                 }
             }
         }
