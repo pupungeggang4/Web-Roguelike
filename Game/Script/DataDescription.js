@@ -6,7 +6,7 @@ const dataCardD = {
 }
 
 const dataWeaponD = {
-    1: {'ID': 1, 'name': 'sword', 'descripiton': ['Deal 4 Damage.']}
+    1: {'ID': 1, 'name': 'sword', 'description': ['Deal 4 Damage.']}
 }
 
 const dataEquipmentD = {

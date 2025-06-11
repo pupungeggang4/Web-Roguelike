@@ -63,6 +63,8 @@ const UI = {
             textWeapon: [404, 84],
             weapon: [400, 160, 80, 80],
             descriptionRect: [720, 160, 320, 80],
+            descriptionStart: [724, 164],
+            descriptionInterval: [0, 20],
 
             textEquipment: [404, 284],
             equipment: [

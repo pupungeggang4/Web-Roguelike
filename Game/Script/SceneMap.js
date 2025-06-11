@@ -47,6 +47,7 @@ class SceneMap {
                         game.state = 'info'
                         game.playerInfoTab = 'profile'
                         game.playerDeckPage = 0
+                        game.playerDescriptionIndex = -1
                     }
                 } else if (game.state === 'info') {
                     if (pointInsideRectUI(pos, UI.map.buttonInfo) || pointInsideRectUI(pos, UI.map.info.buttonClose)) {

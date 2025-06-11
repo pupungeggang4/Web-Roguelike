@@ -36,6 +36,16 @@ class Render {
             Render.strokeRectUI(ctx, UI.map.info.weapon)
             Render.strokeRectUI(ctx, UI.map.info.descriptionRect)
 
+            ctx.font = '20px neodgm'
+            if (game.playerDescriptionIndex === -1) {
+                let w = player.weapon.description
+                for (let i = 0; i < w.length; i++) {
+                    let p = [UI.map.info.descriptionStart[0], UI.map.info.descriptionStart[1] + UI.map.info.descriptionInterval[1] * i]
+                    Render.fillTextUI(ctx, `${w[i]}`, p)
+                }
+            }
+            ctx.font = '32px neodgm'
+
             Render.fillTextUI(ctx, `Equipment`, UI.map.info.textEquipment)
             for (let i = 0; i < 8; i++) {
                 Render.strokeRectUI(ctx, UI.map.info.equipment[i])
