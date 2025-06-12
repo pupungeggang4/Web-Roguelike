@@ -14,7 +14,7 @@ const dataEquipmentD = {
 }
 
 const dataItemD = {
-
+    1: {'ID': 1, 'name': 'heal potion', 'description': ['Restore 10 HP.']}
 }
 
 const dataUnitD = {

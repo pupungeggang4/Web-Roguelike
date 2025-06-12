@@ -1,5 +1,6 @@
 class PlayerAdventure {
     constructor() {
+        this.ID = 0
         this.level = 1
         this.exp = 0
         this.expMax = 50
@@ -17,6 +18,7 @@ class PlayerAdventure {
 
     adventureInit(ID) {
         let data = JSON.parse(JSON.stringify(dataCharacter[ID]))
+        this.ID = ID
         this.level = 1
         this.exp = 0
         this.expMax = 50
