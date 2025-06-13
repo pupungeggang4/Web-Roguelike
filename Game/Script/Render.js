@@ -53,7 +53,7 @@ class Render {
                     Render.fillTextUI(ctx, `${d[i]}`, p)
                 }
             } else if (game.playerDescriptionIndex >= 8 && game.playerDescriptionIndex < 12) {
-                let d = player.equipment[game.playerDescriptionIndex - 8].description
+                let d = player.item[game.playerDescriptionIndex - 8].description
                 for (let i = 0; i < d.length; i++) {
                     let p = [UI.map.info.descriptionStart[0], UI.map.info.descriptionStart[1] + UI.map.info.descriptionInterval[1] * i]
                     Render.fillTextUI(ctx, `${d[i]}`, p)

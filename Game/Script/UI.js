@@ -88,9 +88,9 @@ const UI = {
     battle: {
         buttonMenu: [1180, 20, 80, 80],
         fieldBorder: [20, 20, 640, 640],
-        fieldRect: [52, 52, 576, 576],
-        fieldStart: [52, 52],
-        fieldSize: [64, 64],
+        fieldRect: [60, 60, 560, 560],
+        fieldStart: [60, 60],
+        fieldSize: [80, 80],
         expBar: [20, 680, 1240, 20],
         right: {
             info: [780, 120, 480, 80],
