@@ -7,7 +7,7 @@ class Item {
         this.effect = []
         this.description = []
 
-        this.canvas = document.getElementById('canvas')
+        this.canvas = document.createElement('canvas')
         this.canvas.width = 80
         this.canvas.height = 80
         this.ctx = this.canvas.getContext('2d')

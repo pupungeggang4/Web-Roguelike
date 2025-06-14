@@ -44,5 +44,8 @@ class PlayerAdventure {
         tempWeapon.setData(data['weapon'])
         this.weapon = tempWeapon
         this.item = []
+        let tempItem = new Item()
+        tempItem.setData(1)
+        this.item.push(tempItem)
     }
 }
