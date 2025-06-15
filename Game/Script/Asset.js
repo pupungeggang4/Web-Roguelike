@@ -30,6 +30,15 @@ let img = {
     character: {
         1: new Image(),
     },
+    weapon: {
+        1: new Image(),
+    },
+    equipment: {
+        101: new Image(),
+    },
+    item: {
+        1: new Image(),
+    },
     card: {
         1: new Image(),
         2: new Image(),
@@ -67,6 +76,12 @@ function imageLoad() {
     img.button.close.src = 'Image/Button/ButtonClose.png'
 
     img.character[1].src = 'Image/Character1.png'
+
+    img.weapon[1].src = 'Image/Weapon/Weapon001.png'
+
+    img.equipment[101].src = 'Image/Equipment/Equipment101.png'
+
+    img.item[1].src = 'Image/Item/Item001.png'
 
     img.card[1].src = 'Image/Card/Card001.png'
     img.card[2].src = 'Image/Card/Card002.png'

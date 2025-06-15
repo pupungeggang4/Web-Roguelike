@@ -24,6 +24,7 @@ class Render {
         if (game.playerInfoTab === 'profile') {
             Render.fillTextUI(ctx, 'Name', UI.map.info.textName)
             Render.strokeRectUI(ctx, UI.map.info.portrait)
+            Render.drawImageUI(ctx, img.character[player.ID], UI.map.info.portrait)
             Render.fillTextUI(ctx, `Lv.${player.level}`, UI.map.info.textLevel)
             Render.fillTextUI(ctx, `Exp: ${player.exp}/${player.expMax}`, UI.map.info.textExp)
             Render.fillTextUI(ctx, `Gold: ${player.gold}`, UI.map.info.textGold)
@@ -34,14 +35,44 @@ class Render {
 
             Render.fillTextUI(ctx, `Weapon`, UI.map.info.textWeapon)
             Render.strokeRectUI(ctx, UI.map.info.weapon)
+            player.weapon.render(ctx, UI.map.info.weapon)
             Render.strokeRectUI(ctx, UI.map.info.descriptionRect)
 
+            ctx.font = '20px neodgm'
+
+            if (game.playerDescriptionIndex === -1) {
+                let w = player.weapon.description
+                for (let i = 0; i < w.length; i++) {
+                    let p = [UI.map.info.descriptionStart[0], UI.map.info.descriptionStart[1] + UI.map.info.descriptionInterval[1] * i]
+                    Render.fillTextUI(ctx, `${w[i]}`, p)
+                }
+            } else if (game.playerDescriptionIndex >= 0 && game.playerDescriptionIndex < 8) {
+                let d = player.equipment[game.playerDescriptionIndex].description
+                for (let i = 0; i < d.length; i++) {
+                    let p = [UI.map.info.descriptionStart[0], UI.map.info.descriptionStart[1] + UI.map.info.descriptionInterval[1] * i]
+                    Render.fillTextUI(ctx, `${d[i]}`, p)
+                }
+            } else if (game.playerDescriptionIndex >= 8 && game.playerDescriptionIndex < 12) {
+                let d = player.item[game.playerDescriptionIndex - 8].description
+                for (let i = 0; i < d.length; i++) {
+                    let p = [UI.map.info.descriptionStart[0], UI.map.info.descriptionStart[1] + UI.map.info.descriptionInterval[1] * i]
+                    Render.fillTextUI(ctx, `${d[i]}`, p)
+                }
+            }
+            ctx.font = '32px neodgm'
+
             Render.fillTextUI(ctx, `Equipment`, UI.map.info.textEquipment)
+            for (let i = 0; i < player.equipment.length; i++) {
+                player.equipment[i].render(ctx, UI.map.info.equipment[i])
+            }
             for (let i = 0; i < 8; i++) {
                 Render.strokeRectUI(ctx, UI.map.info.equipment[i])
             }
 
             Render.fillTextUI(ctx, `Item`, UI.map.info.textItem)
+            for (let i = 0; i < player.item.length; i++) {
+                player.item[i].render(ctx, UI.map.info.item[i])
+            }
             for (let i = 0; i < 4; i++) {
                 Render.strokeRectUI(ctx, UI.map.info.item[i])
             }

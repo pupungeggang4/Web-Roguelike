@@ -47,6 +47,7 @@ class SceneMap {
                         game.state = 'info'
                         game.playerInfoTab = 'profile'
                         game.playerDeckPage = 0
+                        game.playerDescriptionIndex = -1
                     }
                 } else if (game.state === 'info') {
                     if (pointInsideRectUI(pos, UI.map.buttonInfo) || pointInsideRectUI(pos, UI.map.info.buttonClose)) {
@@ -56,7 +57,25 @@ class SceneMap {
                     } else if (pointInsideRectUI(pos, UI.map.info.tabDeck)) {
                         game.playerInfoTab = 'deck'
                     }
-
+                    if (game.playerInfoTab === 'profile') {
+                        if (pointInsideRectUI(pos, UI.map.info.weapon)) {
+                            game.playerDescriptionIndex = -1
+                        }
+                        for (let i = 0; i < 8; i++) {
+                            if (pointInsideRectUI(pos, UI.map.info.equipment[i])) {
+                                if (i < game.player.equipment.length) {
+                                    game.playerDescriptionIndex = i
+                                }
+                            }
+                        }
+                        for (let i = 0; i < 4; i++) {
+                            if (pointInsideRectUI(pos, UI.map.info.item[i])) {
+                                if (i < game.player.item.length) {
+                                    game.playerDescriptionIndex = i + 8
+                                }
+                            }
+                        }
+                    }
                     if (game.playerInfoTab === 'deck') {
                         this.handleInfoDeckClick(game, game.player, pos)
                     }

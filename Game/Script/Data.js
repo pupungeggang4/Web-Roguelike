@@ -14,7 +14,7 @@ const dataEquipment = {
 }
 
 const dataItem = {
-
+    1: {'ID': 1, 'name': 'heal potion', 'element': 'normal', 'rarity': 'common', 'effect': []}
 }
 
 const dataUnit = {

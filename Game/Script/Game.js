@@ -9,6 +9,7 @@ class Game {
         this.menu = false
         this.infoTab = ''
         this.playerInfoTab = ''
+        this.playerDescriptionIndex = -1
         this.playerDeckPage = 0
 
         this.canvas = document.getElementById('screen')
