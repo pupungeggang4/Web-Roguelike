@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>game</title>
-</head>
-<body>
-<div id="app"></div>
-<script src="./src/main.js" type="module"></script>
-</body>
+<html>
+    <head>
+        <title>Roguelike Game</title>
+        <style>
+            #screen {
+                border: 2px solid black;
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                top: 0px;
+                bottom: 0px;
+                margin: auto;
+                height: 96%;
+            }
+        </style>
+        <script type="importmap">
+            {
+                "imports": {
+                    "src/": "./src/",
+                    "data/": "./data/",
+                    "scene/": "./src/scene/"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="screen" width="1280" height="720"></canvas>
+        <script type="module" src="src/main.js"></script>
+    </body>
 </html>
