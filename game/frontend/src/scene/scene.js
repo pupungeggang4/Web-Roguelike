@@ -1,4 +1,4 @@
-import {GameVar} from 'src/gamevar.js'
+import {GameVar} from '../gamevar.js'
 
 export class Scene {
     constructor() {

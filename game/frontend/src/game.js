@@ -1,7 +1,7 @@
-import {Render} from 'util/render.js'
+import {Render} from './util/render.js'
 
-import {Scene} from 'scene/scene.js'
-import {SceneTitle} from 'scene/scenetitle.js'
+import {Scene} from './scene/scene.js'
+import {SceneTitle} from './scene/scenetitle.js'
 
 export class Game {
     constructor() {
