@@ -3,6 +3,11 @@
     <head>
         <title>Roguelike Game</title>
         <style>
+            body {
+                touch-action: none;
+                overscroll-behvior: none;
+            }
+
             #screen {
                 border: 2px solid black;
                 position: absolute;
@@ -17,8 +22,10 @@
         <script type="importmap">
             {
                 "imports": {
-                    "src/": "./src/",
                     "data/": "./data/",
+                    "src/": "./src/",
+                    "entity/": "./src/entity/",
+                    "util/": "./src/util/",
                     "scene/": "./src/scene/"
                 }
             }
