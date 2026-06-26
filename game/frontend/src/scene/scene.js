@@ -5,8 +5,19 @@ export class Scene {
 
     }
 
+    ready(gameVar) {
+
+    }
+
     update(gameVar) {
 
     }
 
+    render(gameVar) {
+
+    }
+
+    mouseUp(gameVar, pos, button) {
+
+    }
 }

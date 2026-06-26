@@ -2,6 +2,10 @@ import {GameVar} from 'src/gamevar.js'
 import {Game} from 'src/game.js'
 
 window.onload = main
+document.getElementById('screen').oncontextmenu = (event) => {
+    event.preventDefault()
+    return false
+}
 
 function main() {
     let game
