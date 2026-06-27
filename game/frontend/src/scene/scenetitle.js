@@ -21,6 +21,7 @@ export class SceneTitle extends Scene {
     render(gameVar) {
         let ctx = gameVar.ctx
         ctx.fillRect(0, 0, 80, 80)
+        ctx.fillText("123", 100, 100)
     }
 
     mouseUp(gameVar, pos, button) {
