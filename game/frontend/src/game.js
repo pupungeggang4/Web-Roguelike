@@ -2,6 +2,7 @@ import {Render} from './util/render.js'
 
 import {Scene} from './scene/scene.js'
 import {SceneTitle} from './scene/scenetitle.js'
+import {SceneSelect} from './scene/sceneselect.js'
 
 export class Game {
     constructor() {
@@ -13,11 +14,10 @@ export class Game {
         window.addEventListener('pointerup', (event) => this.pointerUp(event, gameVar), false)
         window.addEventListener('resize', (event) => {
             gameVar.rect = gameVar.canvas.getBoundingClientRect()
-            console.log(gameVar.rect)
         }, false)
 
         this.scenes = {
-            'title': new SceneTitle()
+            'title': new SceneTitle(), 'select': new SceneSelect()
         }
         this.scene = this.scenes['title']
         this.scene.ready(gameVar)
@@ -39,6 +39,12 @@ export class Game {
     }
 
     pointerUp(event, gameVar) {
+        let pos = {
+            x: (event.clientX - gameVar.rect.left) / gameVar.rect.width * gameVar.canvas.width,
+            y: (event.clientY - gameVar.rect.top) / gameVar.rect.height * gameVar.canvas.height
+        }
+        let button = event.button
 
+        this.scene.mouseUp(gameVar, pos, button)
     }
 }

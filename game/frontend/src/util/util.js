@@ -1,5 +1,5 @@
 export class Util {
     static pointInsideRectUI(pos, rect) {
-        return pos.x > rect[0] && pos.x < rect[0] + rect[2] && pos.y > rect[0] && pos.y < rect[0] + rect[3]
+        return pos.x > rect[0] && pos.x < rect[0] + rect[2] && pos.y > rect[1] && pos.y < rect[1] + rect[3]
     }
 }
