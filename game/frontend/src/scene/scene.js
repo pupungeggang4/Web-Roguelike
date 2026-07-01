@@ -17,7 +17,7 @@ export class Scene {
 
     }
 
-    mouseUp(gameVar, pos, button) {
+    pointerUp(gameVar, pos, button) {
 
     }
 }

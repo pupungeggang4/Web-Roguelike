@@ -32,7 +32,7 @@ export class SceneTitle extends Scene {
         Render.fillTextUI(ctx, "Erase Data", UI.title.textErase)
     }
 
-    mouseUp(gameVar, pos, button) {
+    pointerUp(gameVar, pos, button) {
         if (button === 0) {
             if (Util.pointInsideRectUI(pos, UI.title.buttonStart)) {
                 SceneHandler.changeSceneTo(gameVar, 'select')

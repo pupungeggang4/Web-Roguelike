@@ -3,6 +3,8 @@ import {Render} from './util/render.js'
 import {Scene} from './scene/scene.js'
 import {SceneTitle} from './scene/scenetitle.js'
 import {SceneSelect} from './scene/sceneselect.js'
+import {SceneMap} from './scene/scenemap.js'
+import {SceneBattle} from './scene/scenebattle.js'
 
 export class Game {
     constructor() {
@@ -17,7 +19,8 @@ export class Game {
         }, false)
 
         this.scenes = {
-            'title': new SceneTitle(), 'select': new SceneSelect()
+            'title': new SceneTitle(), 'select': new SceneSelect(),
+            'map': new SceneMap(), 'battle': new SceneBattle()
         }
         this.scene = this.scenes['title']
         this.scene.ready(gameVar)
@@ -27,6 +30,7 @@ export class Game {
     loop(gameVar) {
         if (gameVar.sceneChanged === true) {
             this.scene = this.scenes[gameVar.scene]
+            this.scene.ready(gameVar)
             gameVar.sceneChanged = false
         }
 
@@ -45,6 +49,6 @@ export class Game {
         }
         let button = event.button
 
-        this.scene.mouseUp(gameVar, pos, button)
+        this.scene.pointerUp(gameVar, pos, button)
     }
 }
